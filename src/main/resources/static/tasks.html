@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+
+<nav>
+    <h2>TodoApp</h2>
+    <div>
+        <a href="home.html">Home</a>
+        <a href="tasks.html">Tasks</a>
+		<a href="history.html">History</a>
+        <a href="profile.html">Profile</a>
+		
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Your Tasks</h2>
+
+    <input type="number" id="searchId" placeholder="Search by ID">
+    <button onclick="getById()">Search</button>
+    <button onclick="getAll()">Show All</button>
+
+    <ul id="taskList"></ul>
+</div>
+
+<footer>© 2026 Todo App</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

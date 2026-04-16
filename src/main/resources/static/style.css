@@ -1,0 +1,190 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   BODY (DEFAULT LOGIN PAGE)
+========================= */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6366f1, #22c55e);
+}
+
+/* =========================
+   REGISTER PAGE THEME
+========================= */
+body.register-page {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+/* =========================
+   AUTH BOX (LOGIN / REGISTER)
+========================= */
+.auth-box {
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+    color: white;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Inputs */
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Button */
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #111827;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-box button:hover {
+    background: #000;
+    transform: scale(1.03);
+}
+
+/* Links */
+.auth-box a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN CONTAINER (TASK / PROFILE)
+========================= */
+.container {
+    margin-top: 80px;
+    width: 80%;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   INPUTS (TASK PAGE)
+========================= */
+.container input {
+    padding: 10px;
+    margin: 10px 5px 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Buttons (task page) */
+.container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #6366f1;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container button:hover {
+    background: #4f46e5;
+}
+
+/* Task list */
+#taskList {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#taskList li {
+    padding: 10px;
+    margin: 8px 0;
+    background: #f3f4f6;
+    border-radius: 8px;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.logout {
+    background: #ef4444 !important;
+}
+
+.logout:hover {
+    background: #dc2626 !important;
+}
+
+/* =========================
+   FOOTER (FIXED BOTTOM)
+========================= */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #6b7280;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+}
