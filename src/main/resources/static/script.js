@@ -1,4 +1,4 @@
-const API = fetch("https://your-app.up.railway.app/api");
+const API = fetch("todoapp-production-0bbe.up.railway.app");
 
 
 // ================== 👤 AUTH ==================
