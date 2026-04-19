@@ -131,13 +131,14 @@ function getAll() {
 // GET BY ID
 function getById() {
     const id = document.getElementById("searchId").value;
+    const user = getUser();
 
     if (!id) {
         alert("Please enter ID");
         return;
     }
 
-    fetch(`${API}/todos/task/${id}`)
+    fetch(`${API}/todos/task/${id}/${user.id}`)
         .then(res => {
             if (!res.ok) {
                 throw new Error("Task not found");
@@ -147,13 +148,11 @@ function getById() {
         .then(data => {
             showTasks([data]);
         })
-        .catch(err => {
+        .catch(() => {
             document.getElementById("taskList").innerHTML = "";
             alert("Task doesn't exist ❌");
-            console.error(err);
         });
 }
-
 // SHOW TASKS
 function showTasks(tasks) {
     const list = document.getElementById("taskList");
@@ -211,7 +210,9 @@ function updateStatus(id) {
 
 // DELETE TASK
 function deleteTask(id) {
-    fetch(`${API}/todos/${id}`, {
+    const user = getUser();
+
+    fetch(`${API}/todos/${id}/${user.id}`, {
         method: "DELETE"
     })
     .then(() => {
@@ -219,10 +220,6 @@ function deleteTask(id) {
         getAll();
     });
 }
-
-
-// ================== 📜 HISTORY ==================
-
 // ================== 📜 HISTORY ==================
 
 function getHistory() {

@@ -36,13 +36,13 @@ public class TodoService {
 
     // 📋 GET ALL
     public List<Todo> getAll(Long userId) {
-        return repo.findByUserId(userId);
+        return repo.findByUser_Id(userId);   // ✅ FIXED
     }
-
-    // 🔍 GET BY ID
-    public Todo getById(Long id) {
-        return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task not found"));
+    
+ // 🔍 GET BY ID
+    public Todo getById(Long id, Long userId) {
+        return repo.findByIdAndUser_Id(id, userId)   // ✅ FIXED
+                .orElseThrow(() -> new RuntimeException("Task not found or unauthorized"));
     }
 
     // 🔄 UPDATE STATUS
@@ -73,14 +73,14 @@ public class TodoService {
     }
 
     // ❌ DELETE
-    public void delete(Long id) {
+    public void delete(Long id, Long userId) {
 
-        Todo existing = repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Todo not found"));
+        Todo todo = repo.findByIdAndUser_Id(id, userId)   // ✅ FIXED
+                .orElseThrow(() -> new RuntimeException("Task not found or not allowed"));
 
-        // ✅ HISTORY BEFORE DELETE
-        historyService.save("DELETED", existing.getTask(), existing.getUser());
+        // ✅ HISTORY (optional but recommended)
+        historyService.save("DELETED", todo.getTask(), todo.getUser());
 
-        repo.deleteById(id);
+        repo.delete(todo);
     }
 }

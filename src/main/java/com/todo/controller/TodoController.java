@@ -38,14 +38,9 @@ public class TodoController {
      return service.getAll(userId);
  }
 
- @GetMapping("/task/{id}")
- public ResponseEntity<Todo> getById(@PathVariable Long id) {
-     try {
-         Todo todo = service.getById(id);
-         return ResponseEntity.ok(todo);
-     } catch (RuntimeException e) {
-         return ResponseEntity.notFound().build();
-     }
+ @GetMapping("/task/{id}/{userId}")
+ public Todo getById(@PathVariable Long id, @PathVariable Long userId) {
+     return service.getById(id, userId);
  }
 
  @PatchMapping("/{id}")
@@ -53,8 +48,8 @@ public class TodoController {
      return service.updatePartial(id, todo);
  }
 
- @DeleteMapping("/{id}")
- public void delete(@PathVariable Long id) {
-     service.delete(id);
+ @DeleteMapping("/{id}/{userId}")
+ public void delete(@PathVariable Long id, @PathVariable Long userId) {
+     service.delete(id, userId);
  }
 }
