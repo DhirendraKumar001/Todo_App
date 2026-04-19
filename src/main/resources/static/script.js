@@ -1,4 +1,4 @@
-const API = "https://your-app.up.railway.app/api";
+const API = fetch("https://your-app.up.railway.app/api");
 
 
 // ================== 👤 AUTH ==================
